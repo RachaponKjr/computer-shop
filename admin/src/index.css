@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  @page {
+    size: A4;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* Reset all height constraints */
+  html, body, #root {
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/* Hide scrollbar in print preview */
+@media screen {
+  .screen-only {
+    overflow-y: auto;
+  }
+  
+  /* Optional: Hide scrollbar but keep functionality */
+  .screen-only::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}

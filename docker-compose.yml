@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 5001:5001
+    volumes:
+      - ./backend:/app
+    environment:
+      - PORT=5001
+    depends_on:
+      - frontend
+      - admin
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3011:3011
+    volumes:
+      - ./frontend:/app
+    environment:
+      - PORT=3011
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    ports:
+      - 3010:3010
+    volumes:
+      - ./admin:/app
+    environment:
+      - PORT=3010
