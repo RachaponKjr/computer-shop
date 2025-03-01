@@ -4,7 +4,9 @@ import { ArrowLeft, Download, Printer } from 'lucide-react';
 import axios from 'axios';
 import { backendUrl } from '../../App';
 import { toast } from 'react-toastify';
-import { RepairInvoiceTitle, RepairInvoiceHeader, RepairInvoiceDetails, RepairInvoiceTable, RepairInvoiceSummary, RepairInvoiceSignatures } from '../../components/repairs/repairInvoiceContent';
+import { RepairInvoiceDetails, RepairInvoiceSignatures, RepairInvoiceSummary, RepairInvoiceTitle } from '../../components/repairs/RepairInvoiceContent';
+import RepairInvoiceHeader from '../../components/repairs/RepairInvoiceHeader';
+import RepairInvoiceTable from '../../components/repairs/RepairInvoiceTable';
 
 const RepairInvoiceView = () => {
   const { id } = useParams();
