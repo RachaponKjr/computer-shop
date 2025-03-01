@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { backendUrl } from '../../App';
 import CardComponents from '../../components/shared/Card';
-import RepairInvoiceForm from '../../components/repairs/repairInvoiceForm';
+import RepairInvoiceForm from '../../components/repairs/RepairInvoiceForm';
 
 const RepairInvoiceNew = ({token}) => {
   const navigate = useNavigate();
