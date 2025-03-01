@@ -7,6 +7,7 @@ services:
       - 5001:5001
     volumes:
       - ./backend:/app
+      - ./backend/node_modules:/app/node_modules
     environment:
       - PORT=5001
     depends_on:
@@ -14,7 +15,9 @@ services:
       - admin
 
   frontend:
-    build: .
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - 3011:3011
     volumes:
@@ -24,7 +27,9 @@ services:
       - PORT=3011
 
   admin:
-    build: .
+    build: 
+      context: ./admin
+      dockerfile: Dockerfile
     ports:
       - 3010:3010
     volumes:
