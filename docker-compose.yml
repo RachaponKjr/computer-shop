@@ -1,6 +1,8 @@
 services:
   backend:
-    build: .
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - 5001:5001
     volumes:
@@ -10,7 +12,9 @@ services:
     command: npm install && npm start  # ✅ ติดตั้ง dependencies ก่อนรัน
   
   frontend:
-    build: .
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - 3011:3011
     volumes:
@@ -21,7 +25,9 @@ services:
     command: npm install && npm run dev  # ✅ ติดตั้ง vite ก่อน
 
   admin:
-    build: .
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
     ports:
       - 3010:3010
     volumes:
