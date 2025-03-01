@@ -7,33 +7,28 @@ services:
       - 5001:5001
     volumes:
       - ./backend:/app
-      - ./backend/node_modules:/app/node_modules
     environment:
       - PORT=5001
-    depends_on:
-      - frontend
-      - admin
-
+    command: npm install && npm start  # ✅ ติดตั้ง dependencies ก่อนรัน
+  
   frontend:
-    build: 
-      context: ./frontend
-      dockerfile: Dockerfile
+    build: .
     ports:
       - 3011:3011
     volumes:
       - ./frontend:/app
-      - ./frontend/node_modules:/app/node_modules
+      - /app/node_modules  # ✅ ป้องกัน node_modules หาย
     environment:
       - PORT=3011
+    command: npm install && npm run dev  # ✅ ติดตั้ง vite ก่อน
 
   admin:
-    build: 
-      context: ./admin
-      dockerfile: Dockerfile
+    build: .
     ports:
       - 3010:3010
     volumes:
       - ./admin:/app
-      - ./admin/node_modules:/app/node_modules
+      - /app/node_modules  # ✅ ป้องกัน node_modules หาย
     environment:
       - PORT=3010
+    command: npm install && npm run dev  # ✅ ติดตั้ง vite ก่อน
