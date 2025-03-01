@@ -14,9 +14,7 @@ services:
       - admin
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    build: .
     ports:
       - 3011:3011
     volumes:
@@ -26,9 +24,7 @@ services:
       - PORT=3011
 
   admin:
-    build:
-      context: ./admin
-      dockerfile: Dockerfile
+    build: .
     ports:
       - 3010:3010
     volumes:
