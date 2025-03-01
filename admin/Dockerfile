@@ -12,4 +12,4 @@ RUN npm run build
 
 EXPOSE 3010
 
-CMD ["npm", "start"]
+CMD ["npm", "run","preview"]
