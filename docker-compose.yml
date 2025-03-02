@@ -9,8 +9,8 @@ services:
       - ./backend:/app
     environment:
       - PORT=5001
-    command: npm install && npm start  # ✅ ติดตั้ง dependencies ก่อนรัน
-  
+    command: [ "npm", "start" ]
+
   frontend:
     build:
       context: ./frontend
@@ -19,10 +19,10 @@ services:
       - 3011:3011
     volumes:
       - ./frontend:/app
-      - /app/node_modules  # ✅ ป้องกัน node_modules หาย
+      - /app/node_modules # ✅ ป้องกัน node_modules หาย
     environment:
       - PORT=3011
-    command: npm install && npm run dev  # ✅ ติดตั้ง vite ก่อน
+    command: [ "npm", "run", "dev" ]
 
   admin:
     build:
@@ -32,7 +32,7 @@ services:
       - 3010:3010
     volumes:
       - ./admin:/app
-      - /app/node_modules  # ✅ ป้องกัน node_modules หาย
+      - /app/node_modules # ✅ ป้องกัน node_modules หาย
     environment:
       - PORT=3010
-    command: npm install && npm run dev 
+    command: [ "npm", "run", "dev" ]
