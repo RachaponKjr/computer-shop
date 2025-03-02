@@ -14,7 +14,7 @@ import customerRouter from "./routes/customerRoute.js";
 
 // App Config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5001;
 connectDB();
 connectCloudinary();
 
