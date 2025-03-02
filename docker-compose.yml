@@ -35,4 +35,4 @@ services:
       - /app/node_modules  # ✅ ป้องกัน node_modules หาย
     environment:
       - PORT=3010
-    command: npm install && npm run dev  # ✅ ติดตั้ง vite ก่อน
+    command: npm install && npm run dev 
